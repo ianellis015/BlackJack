@@ -233,13 +233,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         getImagePath() {
-            return `playing-cards/${this.rank}_of_${this.suit.toLowerCase()}.svg`
+            return `playing-cards/${this.rank}_of_${this.suit}.svg`
         }
     }
 
     class Deck {
-        static ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace'];
-        static suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+        static ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+        static suits = ['hearts', 'diamonds', 'clubs', 'spades'];
 
         constructor() {
             this.cards = [];
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         addCard(card) {
             this.cards.push(card);
-            if (['Jack', 'Queen', 'King'].includes(card.rank)) {
+            if (['jack', 'queen', 'king'].includes(card.rank)) {
                 this.value += 10;
             } else if (card.rank === 'Ace') {
                 this.value += 11;
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function calculateCardValue(card) {
-        if (['Jack', 'Queen', 'King'].includes(card.rank)) {
+        if (['jack', 'queen', 'king'].includes(card.rank)) {
             return 10;
         } else if (card.rank === 'Ace') {
             return 11;
