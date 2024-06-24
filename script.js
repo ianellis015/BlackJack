@@ -274,12 +274,13 @@ document.addEventListener('DOMContentLoaded', () => {
             this.cards.push(card);
             if (['jack', 'queen', 'king'].includes(card.rank)) {
                 this.value += 10;
-            } else if (card.rank === 'Ace') {
+            } else if (card.rank === 'ace') {
                 this.value += 11;
                 this.aces += 1;
             } else {
                 this.value += parseInt(card.rank, 10);
             }
+            this.adjustForAce();
         }
 
         adjustForAce() {
@@ -298,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function calculateCardValue(card) {
         if (['jack', 'queen', 'king'].includes(card.rank)) {
             return 10;
-        } else if (card.rank === 'Ace') {
+        } else if (card.rank === 'ace') {
             return 11;
         } else {
             return parseInt(card.rank, 10);
@@ -314,3 +315,4 @@ document.addEventListener('DOMContentLoaded', () => {
         return bankroll;
     }
 });
+
