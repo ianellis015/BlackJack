@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/chip-icon.png" type="image/png">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="balance">
+            <h1>Balance: $<span id="balance"></span></h1>
+        </div>
+        <div class="nav-icons">
+            <a href="rules.html"><img src="assets/book-icon.svg" alt="Book-Icon" class="icon"></a>
+            <!-- <a href="#"><img src="assets/profile-icon.svg" alt="Profile-Icon" class="icon"></a> -->
+        </div>
+    </nav>
+    <div class="Header">
+        <h1>Blackjack</h1>
+    </div>
+    <div class="start">
+        <div class="quick-bet-buttons">
+            <button class="quick-bet" data-amount="1">$1</button>
+            <button class="quick-bet" data-amount="5">$5</button>
+            <button class="quick-bet" data-amount="10">$10</button>
+            <button class="quick-bet" data-amount="20">$20</button>
+        </div>
+        <div class="input">
+            <input type="number" id="bet-amount" placeholder="Choose bet amount">
+        </div>
+        <div class="start-btn-div">
+            <button class="start-button">Start</button>
+        </div>
+    </div>
+    <div class="game hidden">
+        <div class="dealer-hand">
+            <div id="dealer-cards">
+                <span id="dealer-card-1"></span>
+                <span id="dealer-card-2" class="hidden">[Hidden Card]</span>
+            </div>
+            <h2>Dealer's Hand</h2>
+        </div>
+        <div class="player-hand">
+            <div id="player-cards"></div>
+            <h2>Your Hand</h2>
+        </div>
+
+        <div class="current-bet">
+            <h2>Bet: $<span id="curr-bet"></span></h2>
+            <h4>Dealer's Hand: <span id="dealer-value"></span></h4>
+            <h4>Your Hand: <span id="player-value"></span></h4>
+        </div>
+        <div class="actions">
+            <button class="stand-button">Stand</button>
+            <button class="hit-button">Hit</button>
+        </div>
+        <div class="result hidden">
+            <div class="result-div">
+                <h2 id="result-message"></h2>
+                <button class="next-round-button">Next Round</button>
+                <button class="reset-button">Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
+
+
